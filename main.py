@@ -37,7 +37,7 @@ def analyze_hipaa_compliance(document_text):
     5️⃣ **Data Access & Encryption** (Who has access? Is data encrypted?)  
     6️⃣ **Third-Party & Business Associate Agreements** (Are vendors HIPAA-compliant?)  
 
-    Provide your response in the following **STRICT JSON format** (DO NOT DEVIATE, MAKE SURE TO PROVIDE A VALID JSON OBJECT):
+    Provide your response in the following **STRICT JSON format** (DO NOT DEVIATE, MAKE SURE TO PROVIDE A VALID JSON OBJECT AND WITHOUT ANY MARKDOWN FORMATTING):
     
     {{
         "overall_compliance_score": "<integer between 1-10>",
@@ -118,6 +118,24 @@ with st.sidebar:
         },
     )
 
+
+def render_analysis(parsed_result):
+    st.success("✅ Analysis Complete!")
+    st.subheader("🔍 Compliance Report:")
+    # for category, details in parsed_result.items():
+    #     st.markdown(f"### {category} (Score: {details['score']}/10)")
+    #     st.write(details["explanation"])
+    print(parsed_result)
+    st.subheader("Overall Score: " + str(parsed_result["overall_compliance_score"]))
+    st.write()
+    st.subheader("Overall Summary")
+    st.write(parsed_result["summary"])
+    st.subheader("🚀 Recommendations")
+    for single_recommendation in parsed_result["recommendations"]:
+        # write as a bullet list
+        st.write(" " + single_recommendation)
+
+
 # Home Page
 if page == "Home":
     st.title("🛡 HIPAA Policy Analyzer")
@@ -166,27 +184,12 @@ elif page == "Upload & Analyze":
                 analysis_result = analyze_hipaa_compliance(document_text)
                 try:
                     parsed_result = json.loads(analysis_result)
-                    st.success("✅ Analysis Complete!")
-                    st.subheader("🔍 Compliance Report:")
-
-                    # for category, details in parsed_result.items():
-                    #     st.markdown(f"### {category} (Score: {details['score']}/10)")
-                    #     st.write(details["explanation"])
-
-                    print(parsed_result)
-                    st.subheader("Overall Score: " + str(parsed_result["overall_compliance_score"]))
-                    st.write()
-
-                    st.subheader("Overall Summary")
-                    st.write(parsed_result["summary"])
-
-                    st.subheader("🚀 Recommendations")
-                    for recommendation in parsed_result["recommendations"]:
-                        # write as a bullet list
-                        st.write(" " + recommendation)
+                    render_analysis(parsed_result)
 
                 except json.JSONDecodeError:
-                    st.error("Error parsing response. Please try again.")
+                    # st.error("Error parsing response. Please try again.")
+                    parsed_result = json.loads(analysis_result + "}")
+                    render_analysis(parsed_result)
 
 elif page == "Example":
     st.title("Example HIPAA Compliance Analysis")
