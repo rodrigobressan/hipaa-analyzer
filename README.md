@@ -1,6 +1,6 @@
-# HIPAA Policy Analyzer: AI-Powered Compliance Checker
+# 🛡 HIPAA Analyzer
 
-HIPAA Policy Analyzer helps companies analyze compliance documents against HIPAA privacy, security, and breach rules, ensuring adherence to regulations.
+HIPAA Analyzer automatically analyze compliance documents against HIPAA privacy, security, and breach rules
 
 ## 💡 How HIPAA Policy Analyzer Works
 
