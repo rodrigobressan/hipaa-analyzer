@@ -1,22 +1,33 @@
-# Doenizer: Medical Notes Anonymizer
+# HIPAA Policy Analyzer: AI-Powered Compliance Checker
 
-Doenizer helps healthcare professionals, medical students, and healthtech innovators anonymize sensitive patient data from medical notes, ensuring compliance with privacy regulations like HIPAA.
+HIPAA Policy Analyzer helps companies analyze compliance documents against HIPAA privacy, security, and breach rules, ensuring adherence to regulations.
 
-## 💡 How Doenizer Works
+## 💡 How HIPAA Policy Analyzer Works
 
-1. **Speech-to-Text (Deepgram)**: Converts audio notes into text.
-2. **NLP Anonymization (spaCy)**: Detects and replaces sensitive information with generic placeholders.
+1. **Upload your policy document**: Submit your compliance policy for analysis.
+2. **AI-powered compliance analysis**: The tool evaluates the document against HIPAA standards.
+3. **Identify areas for improvement**: Receive an analysis on potential compliance gaps.
 
 ## 🌐 Live Demo
 
-A Live Demo for Doenizer can be found [here](https://doenizer.streamlit.app/)
+A Live Demo for HIPAA Policy Analyzer can be found [here](https://hipaa-analyzer.streamlit.app/)
+
+## ⚖️ What is HIPAA?
+
+The Health Insurance Portability and Accountability Act (HIPAA) sets standards for privacy, security, and breach notification in healthcare.
+
+### Key HIPAA Rules:
+
+- **🔒 Privacy Rule**: Protects patient health information.
+- **🔐 Security Rule**: Ensures safeguards for electronic PHI (ePHI).
+- **🚨 Breach Notification Rule**: Requires organizations to notify individuals and authorities of PHI breaches.
 
 ## 🌐 Getting Started
 
 1. **Clone the repo**:
     ```bash
-    git clone https://github.com/yourusername/Doenizer.git
-    cd Doenizer
+    git clone https://github.com/yourusername/hipaa-analyzer.git
+    cd hipaa-analyzer
     ```
 
 2. **Install dependencies**:
@@ -24,41 +35,18 @@ A Live Demo for Doenizer can be found [here](https://doenizer.streamlit.app/)
     pip install -r requirements.txt
     ```
 
-3. **Set API Keys** (Deepgram related for speech-to-text).
+3. **Set API Keys** (for AI-powered analysis).
 
 4. **Run the app**:
     ```bash
     streamlit run main.py
     ```
 
-## 📑 Example: Anonymized Medical Note
-
-**Original Doctor's Note**:
-```
-Patient John Doe, a 45-year-old male, complains of persistent headaches for the past two weeks.
-The patient reports no history of migraines but mentions recent increased work stress.
-No nausea or vomiting. Blood pressure today is 140/90 mmHg.
-Neurological exam is unremarkable. No signs of infection or trauma.
-Suspected stress-related tension headaches. Recommended stress management techniques
-and prescribed ibuprofen 400mg as needed. Follow-up in two weeks if symptoms persist.
-```
-
-**Anonymized Doctor's Note**:
-```
-Patient [PERSON], a [DATE] male, complains of persistent headaches for [DATE].
-The patient reports no history of migraines but mentions recent increased work stress.
-No nausea or vomiting. Blood pressure [DATE] is 140/90 mmHg.
-Neurological exam is unremarkable. No signs of infection or trauma.
-Suspected stress-related tension headaches. Recommended stress management techniques
-and prescribed ibuprofen 400mg as needed. Follow-up in [DATE] if symptoms persist.
-```
-
 ## 📦 Technologies
 
 - **Python**
 - **Streamlit**
-- **Deepgram API (Speech-to-Text)**
-- **spaCy (NLP Anonymization)**
+- **AI-powered Text Analysis with OpenAI**
 
 ## ⚡ Contributing
 
