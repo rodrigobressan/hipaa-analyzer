@@ -35,7 +35,7 @@ The Health Insurance Portability and Accountability Act (HIPAA) sets standards f
     pip install -r requirements.txt
     ```
 
-3. **Set API Keys** (for AI-powered analysis).
+3. **Set API Keys** (for OpenAI, inside `.env` if running locally).
 
 4. **Run the app**:
     ```bash
